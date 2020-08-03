@@ -8,12 +8,20 @@ class RecCollision:
         rec1_sh_x, rec1_sh_y = (rec1.start_point[0], rec1.point2[0]), (rec1.start_point[1], rec1.point3[1])
         rec2_sh_x, rec2_sh_y = (rec2.start_point[0], rec2.point2[0]), (rec2.start_point[1], rec2.point3[1])
 
-        if rec1_sh_x[0] < rec2_sh_x[0] and rec1_sh_x[0] < rec2_sh_x[1] and \
-                rec1_sh_x[1] < rec2_sh_x[0] and rec1_sh_x[1] < rec2_sh_x[1]:
+        if rec1_sh_x[0] <= rec2_sh_x[0] and rec1_sh_x[0] <= rec2_sh_x[1] and \
+                rec1_sh_x[1] <= rec2_sh_x[0] and rec1_sh_x[1] <= rec2_sh_x[1]:
             return False
 
-        elif rec1_sh_y[0] < rec2_sh_y[0] and rec1_sh_y[0] < rec2_sh_y[1] and \
-                rec1_sh_y[1] < rec2_sh_y[0] and rec1_sh_y[1] < rec2_sh_y[1]:
+        elif rec1_sh_x[0] >= rec2_sh_x[0] and rec1_sh_x[0] >= rec2_sh_x[1] and \
+                rec1_sh_x[1] >= rec2_sh_x[0] and rec1_sh_x[1] >= rec2_sh_x[1]:
+            return False
+
+        elif rec1_sh_y[0] <= rec2_sh_y[0] and rec1_sh_y[0] <= rec2_sh_y[1] and \
+                rec1_sh_y[1] <= rec2_sh_y[0] and rec1_sh_y[1] <= rec2_sh_y[1]:
+            return False
+
+        elif rec1_sh_y[0] >= rec2_sh_y[0] and rec1_sh_y[0] >= rec2_sh_y[1] and \
+                rec1_sh_y[1] >= rec2_sh_y[0] and rec1_sh_y[1] >= rec2_sh_y[1]:
             return False
 
         return True
